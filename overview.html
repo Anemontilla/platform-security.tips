@@ -6,6 +6,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+/* === Overview layout final fix === */
+.spotlights > section {
+  margin: 0 !important;
+  padding: 2em 0;
+  overflow: hidden;
+}
+
+.spotlights > section .content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.spotlights > section .content .inner {
+  width: 100%;
+  padding-left: 4em;   /* pushes Learn More away from edge */
+  padding-right: 2em;  /* ensures text never gets cut */
+}
+
+.spotlights > section .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Balanced on desktop */
+@media (min-width: 981px) {
+  .spotlights > section .image {
+    flex: 0 0 40%;
+    max-height: 350px;
+    overflow: hidden;
+  }
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 980px) {
+  .spotlights > section .content .inner {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+#main {
+  overflow-x: hidden;
+}
+
+</style>
+
+
 	</head>
 	<body class="is-preload">
 
@@ -54,7 +106,7 @@
 							<section id="two" class="spotlights">
 								<section>
 									<a href="l1.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l1banner.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -70,7 +122,7 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l2banner.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -86,7 +138,7 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l3banner.webp" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -102,7 +154,7 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l4banner.jpg" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -118,7 +170,7 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l5banner.png" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -134,7 +186,7 @@
 								</section>
 								<section>
 									<a href="generic.html" class="image">
-										<img src="images/pic09.jpg" alt="" data-position="top center" />
+										<img src="images/l6banner.jpg" alt="" data-position="top center" />
 									</a>
 									<div class="content">
 										<div class="inner">
