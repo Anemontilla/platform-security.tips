@@ -50,7 +50,7 @@
 			      <header class="major">
 			        <h1>Lesson 6: Virtualization</h1>
 			      </header>
-			      <span class="image main" id="bannerImage"><img src="images/pic11.jpg" alt="" /></span>
+			      <span class="image main" id="bannerImage"><img src="images/l6banner.jpg" alt="" /></span>
 
 			      <!-- Part 1 -->
 			      <div class="lesson-part">
@@ -60,6 +60,9 @@
 			        <h4>Core Concept</h4>
 			        <p>At the heart of virtualization is the <b>hypervisor</b> - the software that manages and allocates resources like CPU, RAM, and storage between different virtual machines.</p>
 
+					<span class="image fit"><img src="images/hypervisor-types.webp" alt="" /></span>
+
+					<span class="image fit"><img src="images/Types-of-Virtualization-1024x536.jpg" alt="" /></span>
 			        <ul style="padding-left: 20px;">
 			          <li><b>Type 1 (Bare Metal Hypervisors):</b> Installed directly on hardware. Examples include VMware ESXi, Microsoft Hyper-V, and XenServer.</li>
 			          <li><b>Type 2 (Hosted Hypervisors):</b> Run on top of an existing operating system, like VirtualBox or VMware Workstation.</li>
@@ -79,6 +82,8 @@
 			          <li><b>Disaster Recovery:</b> VMs can be easily backed up, cloned, and restored after system failures.</li>
 			        </ul>
 
+					<span class="image fit"><img src="images/Benefits-of-Desktop-Virtualization.webp" alt="" /></span>
+
 			        <p><b>Example:</b> A university IT lab may run dozens of student desktops using virtualization, allowing easy resets and updates without touching physical hardware.</p>
 			      </div>
 
@@ -96,6 +101,8 @@
 			          <li><b>Insecure APIs:</b> Cloud environments often expose APIs for automation that, if misused, can lead to unauthorized access.</li>
 			        </ul>
 
+					<span class="image fit"><img src="images/vmescape.jpeg" alt="" /></span>
+
 			        <p><b>Example:</b> In 2021, a vulnerability in VMware's ESXi hypervisor allowed attackers to run malicious code on the host, leading to ransomware infections across virtualized infrastructures.</p>
 			      </div>
 
@@ -111,6 +118,8 @@
 			          <li><b>Monitor and Audit:</b> Track activity and detect unusual behavior across virtual environments.</li>
 			        </ul>
 
+					<span class="image fit"><img src="images/Virtual-Machine-Management-Best-Practices-1024x536.jpg" alt="" /></span>
+
 			        <p><b>Example:</b> A cloud provider like Azure uses hardware-based isolation (via TPM and Secure Boot) to protect each VM tenant, ensuring no one can access another customer's environment even on the same host.</p>
 			      </div>
 
@@ -124,7 +133,10 @@
 			        <p><b>Example:</b> In DevOps, teams use Docker containers to build, test, and deploy applications consistently across different systems. Kubernetes orchestrates these containers, ensuring uptime and scalability.</p>
 
 			        <p>Understanding virtualization is essential for managing secure cloud and hybrid environments today. It serves as the foundation for most modern IT infrastructures, from enterprise data centers to your favorite streaming platforms.</p>
-			      </div>
+			      
+					<span class="image fit"><img src="images/Docker-Logo-2013.png" alt="" /></span>
+				
+				</div>
 
 			      <!-- Actions -->
 			      <ul class="actions">
@@ -209,6 +221,32 @@
 		  prevBtn.onclick = goPrev;
 		  updateButtons();
 		</script>
+
+		<style>
+  .lesson-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .lesson-part.active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .major h1 {
+      white-space: normal !important;
+      word-wrap: break-word;
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+    .inner {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+    }
+  }
+</style>
 
 	</body>
 </html>

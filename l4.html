@@ -50,7 +50,7 @@
 						<header class="major">
 							<h1>Lesson 4: Common Platform Threats</h1>
 						</header>
-						<span class="image main" id="bannerImage"><img src="images/pic11.jpg" alt="" /></span>
+						<span class="image main" id="bannerImage"><img src="images/l4banner.jpg" alt="" /></span>
 
 						<!-- Part 1 -->
 						<div class="lesson-part">
@@ -74,11 +74,17 @@
 
 							<ul style="padding-left: 40px;">
 								<li><b>Viruses</b> - Attach to legitimate programs and replicate when executed.</li>
+													<br><span class="image fit"><img src="images/virus.png" alt="" /></span>
 								<li><b>Worms</b> - Spread automatically across systems and networks without user action.</li>
+								<br><span class="image fit"><img src="images/worm.webp" alt="" /></span>
 								<li><b>Trojan Horses</b> - Disguise themselves as harmless software to trick users into installing them.</li>
+								<br><span class="image fit"><img src="images/trojan.png" alt="" /></span>
 								<li><b>Ransomware</b> - Encrypts data and demands payment to restore access.</li>
+								<br><span class="image fit"><img src="images/ransom.webp" alt="" /></span>
 								<li><b>Spyware</b> - Secretly collects information about the user or system activities.</li>
+								<br><span class="image fit"><img src="images/spyware.webp" alt="" /></span>
 								<li><b>Rootkits</b> - Hide deep within the operating system to conceal malicious activity.</li>
+								<br><span class="image fit"><img src="images/rootkit.webp" alt="" /></span>
 							</ul>
 
 							<p>Many malware infections exploit outdated systems or users who install software from unverified sources. Regular patching and software verification are crucial defenses.</p>
@@ -91,10 +97,15 @@
 
 							<ul style="padding-left: 40px;">
 								<li><b>Denial-of-Service (DoS) Attacks</b> - Overload systems or networks to make them unavailable to users.</li>
+								<br><span class="image fit"><img src="images/ddos.webp" alt="" /></span>
 								<li><b>Man-in-the-Middle (MitM)</b> - Intercept and alter communication between two systems without detection.</li>
+								<br><span class="image fit"><img src="images/mitm.webp" alt="" /></span>
 								<li><b>Privilege Escalation</b> - Attackers exploit system flaws to gain admin-level control.</li>
+								<br><span class="image fit"><img src="images/privelege.webp" alt="" /></span>
 								<li><b>Zero-Day Exploits</b> - Use newly discovered vulnerabilities before they can be patched.</li>
+								<br><span class="image fit"><img src="images/0day.png" alt="" /></span>
 								<li><b>Firmware Attacks</b> - Target BIOS or UEFI to take control before the operating system even loads.</li>
+								<br><span class="image fit"><img src="images/firmwareattack.png" alt="" /></span>
 							</ul>
 
 							<p>Because these threats operate at a deeper system level, they are harder to detect and require strong platform hardening and secure update mechanisms.</p>
@@ -104,6 +115,8 @@
 						<div class="lesson-part" style="display:none;">
 							<h3>Human-Driven Threats</h3>
 							<p>Technology alone isn't the only weak point, people can often be manipulated into helping attackers. Many technical breaches start with social engineering or insider actions.</p>
+
+							<span class="image fit"><img src="images/threat.webp" alt="" /></span>
 
 							<ul style="padding-left: 40px;">
 								<li><b>Social Engineering</b> - Manipulating individuals into revealing sensitive data or granting access (e.g., phishing emails).</li>
@@ -119,7 +132,7 @@
 						<div class="lesson-part" style="display:none;">
 							<h3>Defending Against Platform Threats</h3>
 							<p>Effective defense involves both technical and behavioral strategies to build resilience against diverse threats.</p>
-
+							<span class="image fit"><img src="images/blog-cyberdefense.jpg" alt="" /></span>
 							<h4>Technical Countermeasures:</h4>
 							<ul style="padding-left: 40px;">
 								<li>Keep all software, OS, and firmware updated.</li>
@@ -222,6 +235,32 @@
 			prevBtn.onclick = goPrev;
 			updateButtons();
 		</script>
+
+		<style>
+  .lesson-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .lesson-part.active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .major h1 {
+      white-space: normal !important;
+      word-wrap: break-word;
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+    .inner {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+    }
+  }
+</style>
 
 	</body>
 </html>

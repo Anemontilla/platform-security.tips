@@ -50,7 +50,7 @@
 			      <header class="major">
 			        <h1>Lesson 5: Platform Architecture & Trusted Platform Module (TPM)</h1>
 			      </header>
-			      <span class="image main" id="bannerImage"><img src="images/pic11.jpg" alt="" /></span>
+			      <span class="image main" id="bannerImage"><img src="images/l5banner.png" alt="" /></span>
 
 			      <!-- Part 1 -->
 			      <div class="lesson-part">
@@ -80,6 +80,7 @@
 			          <li>Frequent updates and permissions for tighter control.</li>
 			        </ul>
 
+					<span class="image fit"><img src="images/mobile-v-desktop-seo.webp" alt="" /></span>
 			        <h4>Desktop Platforms</h4>
 			        <ul style="padding-left: 20px;">
 			          <li>Offer flexibility and performance at the cost of a larger attack surface.</li>
@@ -95,6 +96,7 @@
 			        <h3>Trusted Platform Module (TPM)</h3>
 			        <p>The Trusted Platform Module is a dedicated hardware chip designed to enhance security by providing cryptographic functions and secure key storage. It acts as a "root of trust" for the system.</p>
 
+										<span class="image fit"><img src="images/tpm.webp" alt="" /></span>
 			        <ul style="padding-left: 20px;">
 			          <li><b>Secure Storage:</b> TPM keeps encryption keys, passwords, and certificates isolated from the main CPU and OS.</li>
 			          <li><b>System Integrity:</b> Verifies that firmware and the OS have not been tampered with before booting.</li>
@@ -109,6 +111,8 @@
 			          <li>The OS validates drivers and critical components.</li>
 			        </ul>
 
+					<span class="image fit"><img src="images/systemintegrity.jpg" alt="" /></span>
+				
 			        <p><b>Real-world example:</b> Windows BitLocker uses TPM to securely store disk encryption keys. Without TPM validation, BitLocker refuses to unlock the drive, preventing attackers from booting the OS on another device.</p>
 			      </div>
 
@@ -220,6 +224,32 @@
 		  prevBtn.onclick = goPrev;
 		  updateButtons();
 		</script>
+
+		<style>
+  .lesson-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .lesson-part.active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .major h1 {
+      white-space: normal !important;
+      word-wrap: break-word;
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+    .inner {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+    }
+  }
+</style>
 
 	</body>
 </html>

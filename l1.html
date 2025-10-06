@@ -50,14 +50,27 @@
 			      <header class="major">
 			        <h1>Lesson 1: Introduction to Platform Security</h1>
 			      </header>
-			      <span class="image main" id="bannerImage"><img src="images/pic11.jpg" alt="" /></span>
+			      <span class="image main" id="bannerImage"><img src="images/l1banner.png" alt="" /></span>
 
 			      <!-- Part 1 -->
 			      <div class="lesson-part">
 			        <h3>What is Platform Security?</h3>
 			        It refers to the set of strategies, tools, and policies used to protect the hardware, operating system, 
 			        and software environments from cyber threats and unauthorized access.
+					<p></p>
 
+					<div class="video-container">
+  <iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/K4S-rjfirUw?enablejsapi=1&si=lFh19WWTIuURUitR" 
+    title="YouTube"
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+<br>
 			        <h4 style="text-indent: 40px;">Scope of Platform Security:</h4>
 			        <ul style="padding-left: 60px;">
 			          <li>covers physical devices, virtualization layers, OS, applications, and APIs</li>
@@ -134,12 +147,13 @@
 			      <div class="lesson-part" style="display:none;">
 			        <h3>Authentication</h3>
 			        The process of verifying or proving the user’s identification.
-			        <p style="text-indent: 20px;">There are three common methods of authentication:</p>
+					<p style="text-indent: 20px;">There are three common methods of authentication:</p>
 					<ul style="padding-left: 60px;">
 			          <li><b>1. Something you know:</b> Passwords or passphrases</li>
 			          <li><b>2. Something you have:</b> Tokens, memory cards, smart cards</li>
 					  <li><b>3. Something you are:</b> Biometrics, measurable characteristics</li>
-			        </ul>
+					  			        <br><span class="image fit"><img src="images/3fact.avif" alt="" /></span>
+					</ul>
 
 					<h3>Methods of Authentication</h3>
 					Types of Authentication
@@ -153,12 +167,13 @@
 					<h3>Non-repudation</h3>
 					legal term and is defined as the protection against an individual
 					falsely denying having performed a particular action
-
+								        <br><span class="image fit"><img src="images/nonrep.webp" alt="" /></span>
 					<hr class="major" />
 
 					<h3>Privacy</h3>
 					The right of an individual to control the distribution of
 					information about themselves
+					<br>			        <span class="image fit"><img src="images/privacy.jpg" alt="" /></span>
 					
 					<p>Example of laws governing privacy:</p>
 					<ul style="padding-left: 40px;">
@@ -167,16 +182,6 @@
 					  <li><b>Philippines' Data Privavy Act of 2012(DPA)</b> is a comprehensive law protecting individual privacy while regulating the processing of personal information.</li>
 			        </ul>
 					</div>
-
-
-
-
-
-
-
-
-
-
 
 			      <!-- Actions -->
 			      <ul class="actions">
@@ -209,60 +214,97 @@
 		<script src="assets/js/main.js"></script>
 
 		<script>
-		  const parts = document.querySelectorAll('.lesson-part');
-		  const nextBtn = document.getElementById('nextButton');
-		  const prevBtn = document.getElementById('prevButton');
-		  const bannerImage = document.getElementById('bannerImage');
-		  let current = 0;
+  const parts = document.querySelectorAll('.lesson-part');
+  const nextBtn = document.getElementById('nextButton');
+  const prevBtn = document.getElementById('prevButton');
+  const bannerImage = document.getElementById('bannerImage');
+  let current = 0;
 
-		  // show the first slide
-		  parts[current].classList.add('active');
+  parts[current].classList.add('active');
 
-		  function scrollToTop() {
-		    window.scrollTo({ top: 0, behavior: 'smooth' });
-		  }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-		  function updateButtons() {
-		    prevBtn.style.display = current === 0 ? 'none' : 'inline-block';
-		    if (current === parts.length - 1) {
-		      nextBtn.textContent = 'Finish';
-		      nextBtn.onclick = () => window.location.href = "index.html#one";
-		    } else {
-		      nextBtn.textContent = 'Next';
-		      nextBtn.onclick = goNext;
-		    }
-		    // hide banner image after first slide
-		    bannerImage.style.display = current === 0 ? 'block' : 'none';
-		  }
+  function pauseMedia(part) {
+    part.querySelectorAll('video').forEach(v => v.pause());
+    part.querySelectorAll('iframe').forEach(f => {
+      if (f.src.includes('youtube.com/embed')) {
+        f.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      }
+    });
+  }
 
-		  function goNext() {
-		    parts[current].classList.remove('active');
-		    setTimeout(() => {
-		      parts[current].style.display = 'none';
-		      current++;
-		      parts[current].style.display = 'block';
-		      setTimeout(() => parts[current].classList.add('active'), 10);
-		      updateButtons();
-		      scrollToTop();
-		    }, 500);
-		  }
+  function updateButtons() {
+    prevBtn.style.display = current === 0 ? 'none' : 'inline-block';
+    if (current === parts.length - 1) {
+      nextBtn.textContent = 'Finish';
+      nextBtn.onclick = () => window.location.href = "index.html#one";
+    } else {
+      nextBtn.textContent = 'Next';
+      nextBtn.onclick = goNext;
+    }
+    bannerImage.style.display = current === 0 ? 'block' : 'none';
+  }
 
-		  function goPrev() {
-		    parts[current].classList.remove('active');
-		    setTimeout(() => {
-		      parts[current].style.display = 'none';
-		      current--;
-		      parts[current].style.display = 'block';
-		      setTimeout(() => parts[current].classList.add('active'), 10);
-		      updateButtons();
-		      scrollToTop();
-		    }, 500);
-		  }
+  function goNext() {
+    pauseMedia(parts[current]);
+    parts[current].classList.remove('active');
+    setTimeout(() => {
+      parts[current].style.display = 'none';
+      current++;
+      parts[current].style.display = 'block';
+      setTimeout(() => parts[current].classList.add('active'), 10);
+      updateButtons();
+      scrollToTop();
+    }, 500);
+  }
 
-		  nextBtn.onclick = goNext;
-		  prevBtn.onclick = goPrev;
-		  updateButtons();
-		</script>
+  function goPrev() {
+    pauseMedia(parts[current]);
+    parts[current].classList.remove('active');
+    setTimeout(() => {
+      parts[current].style.display = 'none';
+      current--;
+      parts[current].style.display = 'block';
+      setTimeout(() => parts[current].classList.add('active'), 10);
+      updateButtons();
+      scrollToTop();
+    }, 500);
+  }
+
+  nextBtn.onclick = goNext;
+  prevBtn.onclick = goPrev;
+  updateButtons();
+</script>
+
+
+		<style>
+  .lesson-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .lesson-part.active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .major h1 {
+      white-space: normal !important;
+      word-wrap: break-word;
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+    .inner {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+    }
+  }
+</style>
+
 
 	</body>
 </html>

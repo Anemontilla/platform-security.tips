@@ -50,7 +50,7 @@
 			      <header class="major">
 			        <h1>Lesson 2: Understanding the Risk Management Process</h1>
 			      </header>
-			      <span class="image main" id="bannerImage"><img src="images/pic09.jpg" alt="" /></span>
+			      <span class="image main" id="bannerImage"><img src="images/l2banner.png" alt="" /></span>
 
 			      <!-- Part 1 -->
 			      <div class="lesson-part">
@@ -72,6 +72,7 @@
 			      <div class="lesson-part" style="display:none;">
 			        <h3>Threat Actors</h3>
 			        <ul style="padding-left: 40px;">
+						<br>			        <span class="image fit"><img src="images/threat-actors.png" alt="" /></span>
 			          <li><b>Insiders:</b> Employees or personnel who may cause harm deliberately or by mistake.</li>
 			          <li><b>Outside Individuals/Groups:</b> Hackers or opportunists exploiting vulnerabilities.</li>
 			          <li><b>Non-Political Entities:</b> Cybercriminals or competitors.</li>
@@ -85,23 +86,25 @@
 			      <div class="lesson-part" style="display:none;">
 			        <h3>Vulnerabilities</h3>
 			        <p>A vulnerability is an inherent weakness or flaw in a system or component that, if triggered or exploited, could cause a risk event to occur.</p>
-
+					<br>			        <span class="image fit"><img src="images/vulnerabilities.webp" alt="" /></span>
 			        <h3>Risk Assessment</h3>
 			        <p>Risk assessment is the process of identifying, estimating, and prioritizing risks to an organization’s operations — including its mission, reputation, assets, and individuals.</p>
-			      </div>
+			      <br>			        <span class="image fit"><img src="images/risktreat.png" alt="" /></span>
+				</div>
 
 			      <!-- Part 4 -->
 			      <div class="lesson-part" style="display:none;">
 			        <h3>Risk Treatment</h3>
 			        <p>Risk treatment involves deciding how to respond to identified and prioritized risks. The approach depends on management’s attitude toward risk, resource availability, and mitigation cost.</p>
-
+					
 			        <h4>Main Risk Treatment Options:</h4>
 			        <ul style="padding-left: 40px;">
 			          <li><b>Avoidance:</b> Eliminating the risk entirely by removing the cause or activity.</li>
 			          <li><b>Acceptance:</b> Choosing to take no action and tolerating the risk.</li>
 			          <li><b>Mitigation:</b> Reducing the likelihood or impact of the risk through proactive measures.</li>
 			          <li><b>Transference:</b> Shifting the risk to another party (e.g., through insurance or outsourcing).</li>
-			        </ul>
+					  <br>		        <span class="image fit"><img src="images/riskoptiontreat.webp" alt="" /></span>
+					</ul>
 			      </div>
 
 			      <!-- Actions -->
@@ -188,6 +191,32 @@
 		  prevBtn.onclick = goPrev;
 		  updateButtons();
 		</script>
+
+		<style>
+  .lesson-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+  .lesson-part.active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .major h1 {
+      white-space: normal !important;
+      word-wrap: break-word;
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+    .inner {
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+    }
+  }
+</style>
 
 	</body>
 </html>
